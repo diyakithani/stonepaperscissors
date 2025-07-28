@@ -1,5 +1,6 @@
 .scoreboard{
     display: grid;
+    flex-direction: column;
     justify-content: center;
     
 }
@@ -14,4 +15,41 @@ h1{
     font-size: 50px;
     text-align:center;
 
+}
+.choices{
+    margin: 20px auto 0 auto;
+    height: 200px;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.choice{
+    margin:20px;
+    border-radius: 30%;
+    
+}
+img{
+    height: 100px;
+    border-radius: 50%;
+    border-color: black;
+    border-width: 1rem;
+    border-style: solid;
+}
+img:hover{
+    cursor: pointer;
+    border-radius: 30%;
+    opacity:0.8;
+    border-color: seagreen;
+
+}
+#user-score, #computer-score{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+    margin-top: 10px;
 }

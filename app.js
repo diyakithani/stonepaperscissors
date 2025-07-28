@@ -3,6 +3,7 @@ let computerscore = document.querySelector("#computer-score-val");
 let choices = document.querySelectorAll(".choice");
 let userChoice;
 let computerChoice;
+let resultDisplay = document.querySelector("#result-val");
 
 for (let choice of choices) {
   choice.addEventListener("click", () => {
@@ -28,8 +29,12 @@ function getResult(userChoice, computerChoice) {
   ) {
     console.log("You win!");
     userscore.innerText = (parseInt(userscore.innerText, 10) || 0) + 1;
+    resultDisplay.innerText =
+      "You win! " + userChoice + " beats " + computerChoice;
   } else {
     console.log("You lose!");
     computerscore.innerText = (parseInt(computerscore.innerText, 10) || 0) + 1;
+    resultDisplay.innerText =
+      "You lose! " + computerChoice + " beats " + userChoice;
   }
 }

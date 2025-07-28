@@ -47,9 +47,14 @@ img:hover{
     border-color: seagreen;
 
 }
-#user-score, #computer-score{
+#user-score, #computer-score, #result-val{
     font-size: 30px;
     text-align: center;
     margin: 20px;
     margin-top: 10px;
+}
+#result-val{
+    background-color: lightblue;
+    border-radius: 30%;
+    padding: 20px;
 }

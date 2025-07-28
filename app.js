@@ -52,9 +52,11 @@ function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
   return choices[randomNumber].id;
 }
+
 function getResult(userChoice, computerChoice) {
   if (userChoice === computerChoice) {
     console.log("It's a draw!");
+    resultDisplay.innerText = "It's a draw! Both chose " + userChoice + ".";
   } else if (
     (userChoice === "rock" && computerChoice === "scissors") ||
     (userChoice === "paper" && computerChoice === "rock") ||

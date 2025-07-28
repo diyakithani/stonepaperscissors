@@ -7,6 +7,17 @@
     background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     font-size: 2rem;
 }
+#rounds {
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    width: 50%;
+}
 
 #entry-page button {
     margin-top: 30px;

@@ -1,6 +1,13 @@
 let totalRounds = 0;
 let currentRound = 0;
 let gameStarted = false;
+let userscore = document.querySelector("#user-score-val");
+let computerscore = document.querySelector("#computer-score-val");
+let choices = document.querySelectorAll(".choice");
+let userChoice;
+let computerChoice;
+let resultDisplay = document.querySelector("#result-val");
+
 function startGame() {
   totalRounds = parseInt(document.querySelector("#rounds").value);
   if (!totalRounds || totalRounds <= 0) {
@@ -21,13 +28,6 @@ function startGame() {
     "round-tracker"
   ).innerText = `Round 1 of ${totalRounds}`;
 }
-
-let userscore = document.querySelector("#user-score-val");
-let computerscore = document.querySelector("#computer-score-val");
-let choices = document.querySelectorAll(".choice");
-let userChoice;
-let computerChoice;
-let resultDisplay = document.querySelector("#result-val");
 
 for (let choice of choices) {
   choice.addEventListener("click", () => {
@@ -73,6 +73,7 @@ function getResult(userChoice, computerChoice) {
       "You lose! " + computerChoice + " beats " + userChoice;
   }
 }
+
 function endGame() {
   let user = parseInt(userscore.innerText);
   let comp = parseInt(computerscore.innerText);

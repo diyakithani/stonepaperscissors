@@ -1,3 +1,31 @@
+#entry-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    font-size: 2rem;
+}
+
+#entry-page button {
+    margin-top: 30px;
+    padding: 18px 48px;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#entry-page button:hover {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    transform: scale(1.05);
+}
+
 .scoreboard{
     display: grid;
     flex-direction: column;

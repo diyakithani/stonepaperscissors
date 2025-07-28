@@ -1,3 +1,27 @@
+let totalRounds = 0;
+let currentRound = 0;
+let gameStarted = false;
+function startGame() {
+  totalRounds = parseInt(document.querySelector("#rounds").value);
+  if (!totalRounds || totalRounds <= 0) {
+    alert("Please enter valid number of rounds.");
+    return;
+  }
+
+  currentRound = 0;
+  userscore.innerText = 0;
+  computerscore.innerText = 0;
+  resultDisplay.innerText = "";
+  gameStarted = true;
+
+  document.getElementById("entry-page").style.display = "none";
+  document.getElementById("game-page").style.display = "block";
+
+  document.getElementById(
+    "round-tracker"
+  ).innerText = `Round 1 of ${totalRounds}`;
+}
+
 let userscore = document.querySelector("#user-score-val");
 let computerscore = document.querySelector("#computer-score-val");
 let choices = document.querySelectorAll(".choice");
@@ -7,11 +31,20 @@ let resultDisplay = document.querySelector("#result-val");
 
 for (let choice of choices) {
   choice.addEventListener("click", () => {
+    if (!gameStarted || currentRound >= totalRounds) return;
+
     userChoice = choice.id;
-    console.log("User choice: " + userChoice);
     computerChoice = getComputerChoice();
-    console.log("Computer choice: " + computerChoice);
     getResult(userChoice, computerChoice);
+
+    currentRound++;
+    if (currentRound < totalRounds) {
+      document.getElementById("round-tracker").innerText = `Round ${
+        currentRound + 1
+      } of ${totalRounds}`;
+    } else {
+      endGame();
+    }
   });
 }
 
@@ -37,4 +70,20 @@ function getResult(userChoice, computerChoice) {
     resultDisplay.innerText =
       "You lose! " + computerChoice + " beats " + userChoice;
   }
+}
+function endGame() {
+  let user = parseInt(userscore.innerText);
+  let comp = parseInt(computerscore.innerText);
+  let message = "";
+
+  if (user > comp) {
+    message = "🏆 You win the game!";
+  } else if (user < comp) {
+    message = "😢 Computer wins the game!";
+  } else {
+    message = "🤝 It's a tie overall!";
+  }
+
+  resultDisplay.innerText = message;
+  gameStarted = false;
 }

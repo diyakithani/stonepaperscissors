@@ -8,6 +8,16 @@
     
 </head>
 <body>
+    <div id="entry-page">
+  <input type="number" id="rounds" placeholder="Kitne rounds kheloge?" />
+  <button onclick="startGame()">Start Game</button>
+</div>
+
+<div id="game-page" style="display: none;">
+    <p id="round-tracker">Round 1 of X</p>
+
+
+
 
     <h1>Stone Paper Scissors</h1>
     <p id="heading_p">Choose your weapon!</p>
@@ -33,6 +43,8 @@
         </div>
         <div class="result" id="result">
             <p id="result-val">Make your choice!</p>
+    </div>
+    </div>
     </div>
     <script src="app.js" ></script>
 </body>

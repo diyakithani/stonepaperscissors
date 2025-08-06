@@ -7,6 +7,7 @@ let choices = document.querySelectorAll(".choice");
 let userChoice;
 let computerChoice;
 let resultDisplay = document.querySelector("#result-val");
+let restartButton = document.querySelector("#restart-button");
 
 function startGame() {
   totalRounds = parseInt(document.querySelector("#rounds").value);
@@ -14,7 +15,6 @@ function startGame() {
     alert("Please enter valid number of rounds.");
     return;
   }
-
   currentRound = 0;
   userscore.innerText = 0;
   computerscore.innerText = 0;
